@@ -38,6 +38,7 @@ def on_received_value(name, value):
         basic.show_icon(IconNames.HAPPY)
         cekat = False
 radio.on_received_value(on_received_value)
+
 def on_received_number(receivedNumber):
     if receivedNumber == 0:
         basic.show_icon(IconNames.NO)
