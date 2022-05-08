@@ -47,8 +47,18 @@ forever(function on_forever() {
 radio.onReceivedValue(function on_received_value(name: string, value: number) {
     
     if (name == "prijat" && value == control.deviceSerialNumber()) {
-        basic.showIcon(IconNames.Yes)
+        basic.showIcon(IconNames.Happy)
         cekat = false
+    }
+    
+})
+radio.onReceivedNumber(function on_received_number(receivedNumber: number) {
+    if (receivedNumber == 0) {
+        basic.showIcon(IconNames.No)
+    }
+    
+    if (receivedNumber == 1) {
+        basic.showIcon(IconNames.Yes)
     }
     
 })

@@ -35,6 +35,12 @@ forever(on_forever)
 def on_received_value(name, value):
     global cekat, odpoved
     if name == "prijat" and value == control.device_serial_number():
-        basic.show_icon(IconNames.YES)
+        basic.show_icon(IconNames.HAPPY)
         cekat = False
 radio.on_received_value(on_received_value)
+def on_received_number(receivedNumber):
+    if receivedNumber == 0:
+        basic.show_icon(IconNames.NO)
+    if receivedNumber == 1:
+        basic.show_icon(IconNames.YES)
+radio.on_received_number(on_received_number)
